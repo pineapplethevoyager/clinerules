@@ -1,2 +1,3 @@
 # prompts
-Library of prompts from the Cline community
+** Library of prompts from the Cline community
+## great prompts
