@@ -28,8 +28,8 @@
 5.  **Execution:**
     *   Based on `research_method`:
         *   If "Quick Web Search":
-            *   *(Simulated for now)* Use `use_mcp_tool` with a placeholder for the Serper MCP `search` tool, passing `research_topic`.
-            *   Inform the user: "Executing Quick Web Search via hypothetical Serper MCP..."
+            *   Use `use_mcp_tool` with a placeholder for the Serper MCP `search` tool, passing `research_topic`.
+            *   Inform the user: "Executing Quick Web Search via Serper MCP..."
         *   If "AI-Powered Search":
             *   Use `use_mcp_tool` for `github.com/pashpashpash/perplexity-mcp` -> `search` tool, passing `research_topic`.
             *   Inform the user: "Executing AI-Powered Search via Perplexity MCP..."
@@ -54,6 +54,6 @@
 ---
 **Notes:**
 
-*   This rule relies on the user having the Perplexity and Firecrawl MCP servers connected and running.
+*   This rule relies on the user having the Perplexity Firecrawl, and Serper MCP servers connected and running.
 *   The "Quick Web Search" option is currently hypothetical and would require a Serper MCP server to be implemented and connected.
 *   Error handling (e.g., if an MCP tool fails) is omitted for brevity but should be considered for a production rule.
