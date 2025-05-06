@@ -13,4 +13,4 @@ We welcome contributions! To add your own Cline rule:
 5.  **Commit** your changes and push them to your fork.
 6.  **Submit** a Pull Request (PR) to the main repository.
 
-Your contribution will be reviewed, and once approved, it will be merged into the collection.
+Your contribution will be reviewed, and once approved, it will be merged into the [collection](https://cline.bot/prompts).
