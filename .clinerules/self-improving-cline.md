@@ -1,3 +1,10 @@
+---
+description: Defines a process for Cline to reflect on interactions and suggest improvements to active .clinerules.
+author: https://github.com/nickbaumann98
+version: 1.0
+tags: ["meta", "self-improvement", "clinerules", "reflection", "core-behavior"]
+globs: ["*"]
+---
 # Self-Improving Cline Reflection
 
 **Objective:** Offer opportunities to continuously improve `.clinerules` based on user interactions and feedback.

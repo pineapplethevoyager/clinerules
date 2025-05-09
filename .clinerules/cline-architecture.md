@@ -1,3 +1,10 @@
+---
+description: Defines Cline's extension architecture, components, data flow, and development guidelines.
+author: https://github.com/cline
+version: 1.0
+tags: ["architecture", "development-guide", "extension", "vscode", "core-behavior"]
+globs: ["*"]
+---
 # Cline Extension Architecture & Development Guide
 
 ## Project Overview

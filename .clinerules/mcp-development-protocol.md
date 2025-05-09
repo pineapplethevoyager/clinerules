@@ -1,3 +1,10 @@
+---
+description: Defines the protocol and steps for developing MCP (Model Context Protocol) servers.
+author: https://github.com/nickbaumann98
+version: 1.0
+tags: ["mcp", "development", "protocol", "server", "integration"]
+globs: ["*"]
+---
 # MCP Server Development Protocol
 
 ⚠️ CRITICAL: DO NOT USE attempt_completion BEFORE TESTING ⚠️

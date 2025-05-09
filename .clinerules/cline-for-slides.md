@@ -1,3 +1,10 @@
+---
+description: Provides guidelines and best practices for creating and working with Slidev presentation projects.
+author: https://github.com/nickbaumann98
+version: 1.0
+tags: ["slidev", "slides", "markdown", "vue", "vite", "guide"]
+globs: ["slides.md", "**/slides.md", "*.vue", "layouts/**/*.vue", "components/**/*.vue"]
+---
 # Slidev Project Instructions
 
 This document provides guidelines for working with Slidev projects. Slidev is a Markdown-based presentation tool powered by Vue and Vite.

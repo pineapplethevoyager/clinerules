@@ -1,6 +1,6 @@
 ---
 description: Defines Cline's mandatory protocol for self-reflection, persistent knowledge capture using dedicated logs, and continuous improvement of its operational knowledge before task completion.
-author: Cline (AI Self-Reflection & Improvement)
+author: https://github.com/jeanibarz
 version: 1.0
 tags: ["protocol", "meta", "learning", "reflection", "knowledge-management", "core-behavior"]
 globs: ["*"] # This core protocol is always active and applies to all Cline operations.
