@@ -1,3 +1,10 @@
+---
+description: A comprehensive guide to mastering C# for developers with Python and TypeScript backgrounds.
+author: Your Name/Handle # Placeholder for author
+version: 1.0 # Placeholder for version
+globs: ["**/*.cs"] # Relevant for C# files
+tags: ["csharp", ".net", "guide", "programming-language", "typescript-transition", "python-transition"]
+---
 A Comprehensive Guide to Mastering C# for Python and TypeScript Developers
 This guide is designed for proficient software engineers with a background in Python and TypeScript who are looking to achieve an expert level of understanding and capability in C#. It delves into the core paradigms of C#, its rich feature set, and the intricacies of the.NET ecosystem, highlighting common "gotchas" and providing strategies for a smooth transition.
 1. Introduction: Bridging from TypeScript/Python to C#
@@ -1448,7 +1455,7 @@ Standard Query Operators Overview - C# | Microsoft Learn, accessed May 9, 2025, 
 Write LINQ queries - C# | Microsoft Learn, accessed May 9, 2025, https://learn.microsoft.com/en-us/dotnet/csharp/linq/get-started/write-linq-queries
 Common Pitfalls in LINQ Queries and How to Avoid Them - DEV ..., accessed May 9, 2025, https://dev.to/ferhatacar/common-pitfalls-in-linq-queries-and-how-to-avoid-them-42dd
 Beware of multiple enumeration of IEnumerable - David's Blog, accessed May 9, 2025, https://www.davidhome.net/blog/beware-of-multiple-enumeration-of-ienumerable/
-7 Common MISTAKES made by C# developers (+ How to avoid them) - ByteHide, accessed May 9, 2025, https://www.bytehide.com/blog/7-common-mistakes-made-by-c-developers-how-to-avoid-them
+7 Common MISTAKES made by C# developers (+ How to avoid them) - ByteHide, accessed May 9, 2025, https://blog.ndepend.com/7-common-mistakes-made-by-c-developers-how-to-avoid-them/
 Deferred execution example - LINQ to XML - .NET - Learn Microsoft, accessed May 9, 2025, https://learn.microsoft.com/en-us/dotnet/standard/linq/deferred-execution-example
 The pitfalls of LINQ deferred execution - marcusclasson, accessed May 9, 2025, https://marcusclasson.com/2014/08/18/the-pitfalls-with-linq-deferred-execution/comment-page-1/
 Asynchronous programming scenarios - C# | Microsoft Learn, accessed May 9, 2025, https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/async-scenarios
