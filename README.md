@@ -1,6 +1,6 @@
 # Cline Community Prompts
 
-This repository serves as a community-driven collection of prompts, rules, and configurations for Cline.
+This repository serves as a community-driven collection of .clinerules & workflows for Cline.
 
 ## Contributing
 
