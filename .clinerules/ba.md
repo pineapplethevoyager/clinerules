@@ -1,9 +1,10 @@
 ---
 description: "AI Assistant Guide for Supporting Business Analysts with User Stories"
-author: https://github.com/cuipengfei"
+author: "https://github.com/cuipengfei"
 version: "1.0"
 tags: ["ai assistant", "business analyst", "user stories", "agile", "workflow"]
 globs: ["*"]
+title: "AI Assistant Guide for BAs"
 ---
 
 # AI Assistant Guide for Supporting Business Analysts with User Stories
@@ -61,7 +62,7 @@ For significant work initiatives, the AI assistant establishes a structured know
    ### Story 1: [Title]
       #### Narrative
       #### Acceptance Criteria
-## Open Questions / Points for Clarification
+## Open Questions
 ## Next Steps
 ```
 
