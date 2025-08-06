@@ -13,14 +13,6 @@ echo "🔄 Starting Cline Rules sync..."
 # Navigate to the repository
 cd "$REPO_DIR"
 
-# Create backup directory if it doesn't exist
-mkdir -p "$BACKUP_DIR"
-
-# Create a timestamped backup before syncing
-BACKUP_NAME="clinerules-backup-$(date +%Y%m%d-%H%M%S)"
-echo "📦 Creating backup: $BACKUP_NAME"
-cp -r .clinerules "$BACKUP_DIR/$BACKUP_NAME"
-
 # Fetch latest changes from upstream
 echo "⬇️  Fetching changes from upstream..."
 git fetch upstream
@@ -40,10 +32,29 @@ git merge upstream/main
 echo "⬆️  Pushing updates to your fork..."
 git push origin main
 
+# Copy .clinerules to ~/Documents/Cline/Rules
+echo "📂 Copying .clinerules to ~/Documents/Cline/Rules..."
+
+# Create the destination directory if it doesn't exist
+mkdir -p "$HOME/Documents/Cline"
+
+# Handle existing Rules directory/symlink
+if [ -L "$HOME/Documents/Cline/Rules" ]; then
+    echo "🔗 Removing existing symlink..."
+    rm "$HOME/Documents/Cline/Rules"
+elif [ -d "$HOME/Documents/Cline/Rules" ]; then
+    echo "🗑️  Removing existing ~/Documents/Cline/Rules..."
+    rm -rf "$HOME/Documents/Cline/Rules" 2>/dev/null || echo "⚠️  Could not remove existing Rules directory, continuing..."
+fi
+
+# Copy the directory
+echo "📁 Copying files..."
+cp -r "$REPO_DIR/.clinerules" "$HOME/Documents/Cline/Rules"
+
 # Show what changed
 echo "📋 Recent changes:"
 git log --oneline -10
 
 echo "✅ Sync complete!"
 echo "📦 Backup stored at: $BACKUP_DIR/$BACKUP_NAME"
-echo "🔗 Your .clinerules are updated with the latest community rules"
+echo "📁 .clinerules copied to ~/Documents/Cline/Rules"
