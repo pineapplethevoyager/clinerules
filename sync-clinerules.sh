@@ -1,60 +1,57 @@
 #!/bin/bash
 
-# Cline Rules Weekly Sync Script
-# This script syncs your fork with the upstream cline/prompts repository
+# Cline Rules Sync Script
+# This script copies all .clinerule files to target directories
 
 set -e
 
 REPO_DIR="$HOME/workspace/clinerules"
-BACKUP_DIR="$HOME/.clinerules-backups"
 
-echo "🔄 Starting Cline Rules sync..."
+# List of target directories to copy rules to
+TARGET_DIRECTORIES=(
+    "$HOME/workspace/blackout/.clinerules"
+    # Add more directories here as needed
+    # "$HOME/workspace/other-project/.clinerules"
+    # "$HOME/workspace/another-project/.clinerules"
+)
+
+echo "🔄 Starting Cline Rules copy process..."
 
 # Navigate to the repository
 cd "$REPO_DIR"
 
-# Fetch latest changes from upstream
-echo "⬇️  Fetching changes from upstream..."
-git fetch upstream
-
-# Check if we're on main branch, if not switch to it
-CURRENT_BRANCH=$(git branch --show-current)
-if [ "$CURRENT_BRANCH" != "main" ]; then
-    echo "🔀 Switching to main branch..."
-    git checkout main
+# Check if .clinerules directory exists
+if [ ! -d ".clinerules" ]; then
+    echo "❌ Error: .clinerules directory not found in $REPO_DIR"
+    exit 1
 fi
 
-# Merge upstream changes
-echo "🔀 Merging upstream changes..."
-git merge upstream/main
+echo "📂 Found .clinerules directory with the following rules:"
+ls -la .clinerules/
 
-# Push updates to your fork
-echo "⬆️  Pushing updates to your fork..."
-git push origin main
+# Copy rules to each target directory
+for target_dir in "${TARGET_DIRECTORIES[@]}"; do
+    echo ""
+    echo "📁 Processing target: $target_dir"
+    
+    # Create the target directory if it doesn't exist
+    if [ ! -d "$target_dir" ]; then
+        echo "📂 Creating directory: $target_dir"
+        mkdir -p "$target_dir"
+    else
+        echo "📂 Directory already exists: $target_dir"
+    fi
+    
+    # Copy all files from .clinerules to target directory
+    echo "📋 Copying all .clinerule files..."
+    cp -r "$REPO_DIR/.clinerules/"* "$target_dir/"
+    
+    # Show what was copied
+    echo "✅ Successfully copied rules to: $target_dir"
+    echo "📋 Files in target directory:"
+    ls -la "$target_dir/"
+done
 
-# Copy .clinerules to ~/Documents/Cline/Rules
-echo "📂 Copying .clinerules to ~/Documents/Cline/Rules..."
-
-# Create the destination directory if it doesn't exist
-mkdir -p "$HOME/Documents/Cline"
-
-# Handle existing Rules directory/symlink
-if [ -L "$HOME/Documents/Cline/Rules" ]; then
-    echo "🔗 Removing existing symlink..."
-    rm "$HOME/Documents/Cline/Rules"
-elif [ -d "$HOME/Documents/Cline/Rules" ]; then
-    echo "🗑️  Removing existing ~/Documents/Cline/Rules..."
-    rm -rf "$HOME/Documents/Cline/Rules" 2>/dev/null || echo "⚠️  Could not remove existing Rules directory, continuing..."
-fi
-
-# Copy the directory
-echo "📁 Copying files..."
-cp -r "$REPO_DIR/.clinerules" "$HOME/Documents/Cline/Rules"
-
-# Show what changed
-echo "📋 Recent changes:"
-git log --oneline -10
-
+echo ""
 echo "✅ Sync complete!"
-echo "📦 Backup stored at: $BACKUP_DIR/$BACKUP_NAME"
-echo "📁 .clinerules copied to ~/Documents/Cline/Rules"
+echo "📁 Rules copied to ${#TARGET_DIRECTORIES[@]} target directories"
